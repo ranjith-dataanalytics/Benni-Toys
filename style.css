@@ -22,16 +22,12 @@ body {
   overflow: hidden;
 }
 
-/* =========================================
-   MAIN PAGE
-========================================= */
-
 .front-page {
   width: 100%;
   height: 100svh;
-  min-height: 520px;
+  min-height: 560px;
   max-width: 1100px;
-  margin: 0 auto;
+  margin: auto;
   position: relative;
 
   display: flex;
@@ -40,9 +36,14 @@ body {
   overflow: hidden;
 
   background:
-    radial-gradient(circle at 50% 20%, rgba(255,255,255,.55), transparent 35%),
+    radial-gradient(
+      circle at 50% 25%,
+      rgba(255,255,255,.65),
+      transparent 38%
+    ),
     #fbf0e4;
 }
+
 
 /* =========================================
    HERO
@@ -52,23 +53,27 @@ body {
   position: relative;
   flex: 0 0 auto;
   text-align: center;
-
-  padding-top: clamp(8px, 1.5vh, 18px);
   z-index: 2;
+
+  padding-top: 5px;
 }
 
-/* Top logo */
+/* Main logo */
 
 .logo {
   display: block;
-  width: clamp(115px, 29vw, 210px);
+
+  width: clamp(105px, 28vw, 205px);
   height: auto;
+
   margin: 0 auto;
 
   object-fit: contain;
 
-  filter: drop-shadow(0 4px 4px rgba(80, 50, 20, .12));
+  filter:
+    drop-shadow(0 3px 4px rgba(70,40,20,.10));
 }
+
 
 /* Brand */
 
@@ -79,49 +84,58 @@ body {
   align-items: center;
   justify-content: center;
 
-  margin-top: clamp(2px, .5vh, 8px);
+  margin-top: 1px;
 }
 
 .brand-wrap h1 {
   font-family: "Baloo 2", cursive;
-  font-size: clamp(42px, 11vw, 88px);
+
+  font-size: clamp(42px, 11vw, 82px);
+
   line-height: .82;
+
   font-weight: 800;
-  letter-spacing: -2px;
+
+  letter-spacing: -2.5px;
 
   text-shadow:
-    0 3px 0 rgba(255,255,255,.55),
-    0 5px 8px rgba(70,40,20,.12);
+    0 2px 0 rgba(255,255,255,.65),
+    0 4px 7px rgba(70,40,20,.10);
 }
 
 .brand-wrap h1 span {
-  color: #f06b73;
+  color: #ef6972;
 }
 
 .brand-wrap h1 strong {
-  color: #31b8bc;
+  color: #2fb7bb;
   font-weight: 800;
 }
 
-/* Teddy */
+
+/* Teddy beside name */
 
 .teddy {
-  width: clamp(55px, 13vw, 115px);
+  width: clamp(48px, 12vw, 100px);
+
   height: auto;
 
-  margin-left: -2px;
-  margin-top: 8px;
+  margin-left: 0;
+  margin-top: 7px;
 
   object-fit: contain;
 
-  filter: drop-shadow(0 5px 5px rgba(80,50,20,.12));
+  filter:
+    drop-shadow(0 4px 5px rgba(70,40,20,.12));
 }
 
-/* Decorative leaves / wood */
+
+/* Decorative leaves */
 
 .leaf,
 .wood {
   position: absolute;
+
   pointer-events: none;
   user-select: none;
 }
@@ -130,21 +144,26 @@ body {
   left: -8px;
   top: 0;
 
-  font-size: clamp(35px, 10vw, 90px);
-  opacity: .5;
+  font-size: clamp(35px, 9vw, 80px);
+
+  opacity: .48;
 
   transform: rotate(-20deg);
 }
 
 .wood-top {
-  right: 8px;
-  top: 10px;
+  right: 7px;
+  top: 8px;
 
-  font-size: clamp(32px, 8vw, 75px);
-  opacity: .55;
+  font-size: clamp(32px, 8vw, 72px);
+
+  opacity: .50;
 }
 
-/* Divider */
+
+/* =========================================
+   DIVIDER
+========================================= */
 
 .divider {
   display: flex;
@@ -153,34 +172,43 @@ body {
 
   gap: 12px;
 
-  margin: clamp(4px, 1vh, 10px) auto 0;
-  width: min(70%, 420px);
+  width: 70%;
+  max-width: 440px;
+
+  margin: 5px auto 0;
 }
 
 .divider span {
   height: 2px;
+
   flex: 1;
 
-  background: #8a6549;
-  opacity: .8;
+  background: #876449;
+
+  opacity: .75;
 }
 
 .divider b {
-  color: #f17882;
-  font-size: 20px;
+  color: #f27882;
+
+  font-size: 21px;
+
+  line-height: 1;
 }
+
 
 /* Subtitle */
 
 .subtitle {
-  margin-top: clamp(2px, .4vh, 6px);
+  margin-top: 3px;
 
-  font-family: "Poppins", sans-serif;
-  font-size: clamp(13px, 3.5vw, 25px);
+  font-size: clamp(13px, 3.5vw, 24px);
+
+  line-height: 1.1;
+
   font-weight: 500;
-
-  color: #3b2418;
 }
+
 
 /* =========================================
    MENU
@@ -189,18 +217,20 @@ body {
 .menu {
   width: min(92%, 760px);
 
-  margin: clamp(5px, 1vh, 12px) auto 0;
+  margin: 7px auto 0;
 
   display: flex;
   flex-direction: column;
 
-  gap: clamp(5px, .9vh, 10px);
+  gap: 5px;
 
   flex: 0 1 auto;
+
   min-height: 0;
 }
 
-/* Menu card */
+
+/* Menu cards */
 
 .menu-item {
   position: relative;
@@ -210,57 +240,57 @@ body {
 
   width: 100%;
 
-  height: clamp(55px, 8.5vh, 86px);
+  height: clamp(54px, 8.1vh, 82px);
 
   padding:
-    clamp(4px, 1vw, 10px)
-    clamp(10px, 2.5vw, 22px);
+    3px
+    clamp(10px, 2.5vw, 20px);
 
-  border: 2px solid #e5c9a7;
-  border-radius: clamp(14px, 3vw, 25px);
+  border: 2px solid #e3c6a1;
 
-  background: rgba(255, 250, 244, .48);
+  border-radius: 20px;
+
+  background:
+    rgba(255,250,244,.48);
 
   text-decoration: none;
+
   color: #3b2418;
 
   box-shadow:
-    0 2px 0 rgba(255,255,255,.7),
-    0 4px 10px rgba(80,50,20,.05);
-
-  transition:
-    transform .2s ease,
-    background .2s ease,
-    box-shadow .2s ease;
+    0 2px 0 rgba(255,255,255,.8),
+    0 3px 8px rgba(80,50,20,.05);
 
   overflow: hidden;
+
+  transition:
+    transform .18s ease,
+    background .18s ease;
 }
 
 .menu-item:hover {
-  transform: translateY(-2px);
-
-  background: rgba(255,255,255,.72);
-
-  box-shadow:
-    0 5px 15px rgba(80,50,20,.12);
+  background: rgba(255,255,255,.65);
+  transform: translateY(-1px);
 }
 
 .menu-item:active {
   transform: scale(.985);
 }
 
-/* Menu image */
+
+/* Menu images */
 
 .menu-item > img {
   flex: 0 0 auto;
 
-  width: clamp(48px, 13vw, 88px);
-  height: clamp(48px, 13vw, 88px);
+  width: clamp(47px, 12vw, 82px);
+  height: clamp(47px, 12vw, 82px);
 
   object-fit: contain;
 
-  margin-right: clamp(8px, 2vw, 20px);
+  margin-right: clamp(8px, 2vw, 18px);
 }
+
 
 /* Menu text */
 
@@ -272,7 +302,8 @@ body {
 .menu-text h2 {
   font-family: "Baloo 2", cursive;
 
-  font-size: clamp(17px, 4.6vw, 31px);
+  font-size: clamp(17px, 4.7vw, 31px);
+
   line-height: 1;
 
   font-weight: 700;
@@ -284,10 +315,12 @@ body {
   margin-top: 3px;
 
   font-size: clamp(10px, 2.7vw, 17px);
-  line-height: 1.15;
+
+  line-height: 1.1;
 
   white-space: nowrap;
 }
+
 
 /* Arrow */
 
@@ -295,7 +328,9 @@ body {
   flex: 0 0 auto;
 
   font-family: Arial, sans-serif;
-  font-size: clamp(28px, 7vw, 48px);
+
+  font-size: clamp(29px, 7vw, 46px);
+
   font-weight: 300;
 
   line-height: 1;
@@ -303,14 +338,9 @@ body {
   margin-left: 5px;
 }
 
-/* WhatsApp row */
-
-.menu-item.whatsapp {
-  border-color: #dfc4a4;
-}
 
 /* =========================================
-   SOCIAL AREA
+   SOCIAL
 ========================================= */
 
 .social-area {
@@ -318,11 +348,12 @@ body {
 
   text-align: center;
 
-  padding-top: clamp(4px, .8vh, 10px);
+  padding-top: 5px;
 }
 
 .social-icons {
   display: flex;
+
   justify-content: center;
   align-items: center;
 
@@ -330,39 +361,38 @@ body {
 }
 
 .social-icons a {
-  width: clamp(38px, 10vw, 58px);
-  height: clamp(38px, 10vw, 58px);
+  width: clamp(39px, 10vw, 58px);
+  height: clamp(39px, 10vw, 58px);
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
-  border: 2px solid #b9965e;
+  border: 2px solid #b79760;
+
   border-radius: 50%;
 
   color: #3b2418;
+
   background: rgba(255,255,255,.25);
 
   text-decoration: none;
 
   font-size: clamp(20px, 5vw, 31px);
-
-  transition: transform .2s ease;
-}
-
-.social-icons a:hover {
-  transform: scale(1.08);
 }
 
 .social-area > p {
-  margin-top: clamp(3px, .5vh, 7px);
+  margin-top: 4px;
 
   font-size: clamp(9px, 2.7vw, 16px);
+
   line-height: 1.1;
 }
 
 .tiny-divider {
   display: flex;
+
   justify-content: center;
   align-items: center;
 
@@ -377,8 +407,9 @@ body {
   color: #f17882;
 }
 
+
 /* =========================================
-   BOTTOM SCENE
+   BOTTOM IMAGE
 ========================================= */
 
 .bottom-scene {
@@ -389,12 +420,13 @@ body {
   width: 100%;
 
   display: flex;
+
   align-items: flex-end;
   justify-content: center;
 
   overflow: hidden;
 
-  margin-top: 2px;
+  margin-top: 1px;
 }
 
 .bottom-scene img {
@@ -404,8 +436,10 @@ body {
   height: 100%;
 
   object-fit: cover;
+
   object-position: center bottom;
 }
+
 
 /* =========================================
    FOOTER
@@ -415,6 +449,7 @@ footer {
   display: none;
 }
 
+
 /* =========================================
    FLOATING WHATSAPP
 ========================================= */
@@ -422,19 +457,21 @@ footer {
 .floating-whatsapp {
   position: fixed;
 
-  right: clamp(10px, 3vw, 25px);
-  bottom: clamp(10px, 2vh, 20px);
+  right: 12px;
+  bottom: 12px;
 
-  width: clamp(48px, 13vw, 65px);
-  height: clamp(48px, 13vw, 65px);
+  width: clamp(48px, 13vw, 64px);
+  height: clamp(48px, 13vw, 64px);
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
   border-radius: 50%;
 
   background: #25d366;
+
   color: white;
 
   text-decoration: none;
@@ -444,27 +481,22 @@ footer {
   box-shadow:
     0 5px 15px rgba(0,0,0,.18);
 
-  z-index: 20;
-
-  transition: transform .2s ease;
+  z-index: 50;
 }
 
-.floating-whatsapp:hover {
-  transform: scale(1.08);
-}
 
 /* =========================================
-   SHORT PHONES
+   SHORT MOBILE SCREENS
 ========================================= */
 
 @media (max-height: 700px) {
 
   .hero {
-    padding-top: 3px;
+    padding-top: 2px;
   }
 
   .logo {
-    width: clamp(90px, 23vw, 145px);
+    width: clamp(85px, 23vw, 140px);
   }
 
   .brand-wrap h1 {
@@ -472,11 +504,11 @@ footer {
   }
 
   .teddy {
-    width: clamp(42px, 11vw, 75px);
+    width: clamp(42px, 10vw, 73px);
   }
 
   .divider {
-    margin-top: 1px;
+    margin-top: 2px;
   }
 
   .subtitle {
@@ -484,17 +516,17 @@ footer {
   }
 
   .menu {
-    margin-top: 3px;
-    gap: 3px;
+    margin-top: 4px;
+    gap: 4px;
   }
 
   .menu-item {
-    height: clamp(48px, 7.5vh, 60px);
+    height: clamp(49px, 7.4vh, 60px);
   }
 
   .menu-item > img {
-    width: 45px;
-    height: 45px;
+    width: 44px;
+    height: 44px;
   }
 
   .menu-text h2 {
@@ -509,9 +541,14 @@ footer {
     font-size: 28px;
   }
 
+  .social-area {
+    padding-top: 3px;
+  }
+
   .social-icons a {
-    width: 34px;
-    height: 34px;
+    width: 35px;
+    height: 35px;
+
     font-size: 18px;
   }
 
@@ -520,8 +557,9 @@ footer {
   }
 }
 
+
 /* =========================================
-   VERY SHORT PHONES
+   VERY SHORT MOBILE
 ========================================= */
 
 @media (max-height: 600px) {
@@ -538,12 +576,21 @@ footer {
     width: 38px;
   }
 
+  .divider {
+    margin-top: 1px;
+  }
+
   .subtitle {
     font-size: 10px;
   }
 
+  .menu {
+    gap: 3px;
+  }
+
   .menu-item {
     height: 43px;
+
     border-radius: 12px;
   }
 
@@ -567,6 +614,7 @@ footer {
   .social-icons a {
     width: 30px;
     height: 30px;
+
     font-size: 16px;
   }
 
@@ -578,6 +626,7 @@ footer {
     display: none;
   }
 }
+
 
 /* =========================================
    DESKTOP
@@ -593,17 +642,13 @@ footer {
     min-height: 100vh;
 
     padding:
-      20px
+      15px
       20px
       0;
   }
 
-  .hero {
-    padding-top: 5px;
-  }
-
   .logo {
-    width: 190px;
+    width: 185px;
   }
 
   .brand-wrap h1 {
@@ -611,21 +656,21 @@ footer {
   }
 
   .teddy {
-    width: 100px;
+    width: 98px;
   }
 
   .menu {
     width: 680px;
-    gap: 8px;
+    gap: 7px;
   }
 
   .menu-item {
-    height: 76px;
+    height: 74px;
   }
 
   .menu-item > img {
-    width: 72px;
-    height: 72px;
+    width: 70px;
+    height: 70px;
   }
 
   .menu-text h2 {
@@ -641,6 +686,7 @@ footer {
   }
 }
 
+
 /* =========================================
    LARGE DESKTOP
 ========================================= */
@@ -652,7 +698,7 @@ footer {
   }
 
   .logo {
-    width: 210px;
+    width: 205px;
   }
 
   .brand-wrap h1 {
