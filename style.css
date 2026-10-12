@@ -1,473 +1,669 @@
+/* =========================================
+   BENNI TOYS CREATIONS
+   ONE-SCREEN MOBILE HOME PAGE
+========================================= */
+
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-:root {
-  --cream: #fbf0e4;
-  --cream-light: #fff9f2;
-  --brown: #3c2a20;
-  --border: #e2c8a9;
-  --pink: #f06b76;
-  --teal: #21aeb7;
+html,
+body {
+  width: 100%;
+  height: 100%;
 }
 
 body {
-  margin: 0;
-  min-height: 100vh;
-  background:
-    radial-gradient(circle at 10% 15%, rgba(218, 190, 156, .12), transparent 25%),
-    radial-gradient(circle at 90% 85%, rgba(218, 190, 156, .13), transparent 28%),
-    var(--cream);
-  color: var(--brown);
-  font-family: "Poppins", Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
+  background: #fbf0e4;
+  color: #3b2418;
+  overflow: hidden;
 }
+
+/* =========================================
+   MAIN PAGE
+========================================= */
 
 .front-page {
-  width: min(100%, 980px);
-  min-height: 100vh;
+  width: 100%;
+  height: 100svh;
+  min-height: 520px;
+  max-width: 1100px;
   margin: 0 auto;
-  overflow: hidden;
   position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
   background:
-    linear-gradient(180deg, rgba(255,250,244,.92), rgba(251,240,228,.98));
-  box-shadow: 0 0 45px rgba(82, 51, 27, .10);
+    radial-gradient(circle at 50% 20%, rgba(255,255,255,.55), transparent 35%),
+    #fbf0e4;
 }
 
-/* HERO */
+/* =========================================
+   HERO
+========================================= */
 
 .hero {
   position: relative;
+  flex: 0 0 auto;
   text-align: center;
-  padding: 24px 24px 8px;
+
+  padding-top: clamp(8px, 1.5vh, 18px);
+  z-index: 2;
 }
+
+/* Top logo */
 
 .logo {
   display: block;
-  width: clamp(190px, 30vw, 300px);
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: 50%;
-  margin: 0 auto 4px;
-  mix-blend-mode: multiply;
+  width: clamp(115px, 29vw, 210px);
+  height: auto;
+  margin: 0 auto;
+
+  object-fit: contain;
+
+  filter: drop-shadow(0 4px 4px rgba(80, 50, 20, .12));
 }
+
+/* Brand */
+
+.brand-wrap {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: clamp(2px, .5vh, 8px);
+}
+
+.brand-wrap h1 {
+  font-family: "Baloo 2", cursive;
+  font-size: clamp(42px, 11vw, 88px);
+  line-height: .82;
+  font-weight: 800;
+  letter-spacing: -2px;
+
+  text-shadow:
+    0 3px 0 rgba(255,255,255,.55),
+    0 5px 8px rgba(70,40,20,.12);
+}
+
+.brand-wrap h1 span {
+  color: #f06b73;
+}
+
+.brand-wrap h1 strong {
+  color: #31b8bc;
+  font-weight: 800;
+}
+
+/* Teddy */
+
+.teddy {
+  width: clamp(55px, 13vw, 115px);
+  height: auto;
+
+  margin-left: -2px;
+  margin-top: 8px;
+
+  object-fit: contain;
+
+  filter: drop-shadow(0 5px 5px rgba(80,50,20,.12));
+}
+
+/* Decorative leaves / wood */
 
 .leaf,
 .wood {
   position: absolute;
   pointer-events: none;
-  opacity: .55;
   user-select: none;
 }
 
 .leaf-left {
-  left: 2px;
-  top: 6px;
-  font-size: clamp(38px, 7vw, 78px);
+  left: -8px;
+  top: 0;
+
+  font-size: clamp(35px, 10vw, 90px);
+  opacity: .5;
+
+  transform: rotate(-20deg);
 }
 
 .wood-top {
-  right: 18px;
-  top: 16px;
-  font-size: clamp(38px, 6vw, 70px);
+  right: 8px;
+  top: 10px;
+
+  font-size: clamp(32px, 8vw, 75px);
+  opacity: .55;
 }
 
-.brand-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  margin-top: 3px;
-}
-
-.brand-wrap h1 {
-  margin: 0;
-  font-family: "Baloo 2", cursive;
-  font-size: clamp(48px, 8vw, 82px);
-  line-height: .86;
-  letter-spacing: -3px;
-  font-weight: 800;
-  text-shadow: 0 4px 0 rgba(0,0,0,.04);
-}
-
-.brand-wrap h1 span {
-  color: var(--pink);
-}
-
-.brand-wrap h1 strong {
-  color: var(--teal);
-}
-
-.teddy {
-  width: clamp(85px, 13vw, 150px);
-  height: clamp(95px, 15vw, 170px);
-  object-fit: cover;
-  border-radius: 28px;
-  mix-blend-mode: multiply;
-}
+/* Divider */
 
 .divider {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
-  margin: 15px auto 3px;
+
+  gap: 12px;
+
+  margin: clamp(4px, 1vh, 10px) auto 0;
+  width: min(70%, 420px);
 }
 
 .divider span {
-  width: clamp(90px, 19vw, 180px);
   height: 2px;
-  background: #7d5c43;
+  flex: 1;
+
+  background: #8a6549;
+  opacity: .8;
 }
 
 .divider b {
-  color: #f17a85;
-  font-size: 22px;
+  color: #f17882;
+  font-size: 20px;
 }
+
+/* Subtitle */
 
 .subtitle {
-  margin: 0 0 22px;
-  font-family: "Baloo 2", cursive;
-  font-size: clamp(21px, 3vw, 28px);
+  margin-top: clamp(2px, .4vh, 6px);
+
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(13px, 3.5vw, 25px);
   font-weight: 500;
+
+  color: #3b2418;
 }
 
-/* MENU */
+/* =========================================
+   MENU
+========================================= */
 
 .menu {
-  width: min(760px, calc(100% - 34px));
-  margin: 0 auto;
-  display: grid;
-  gap: 10px;
+  width: min(92%, 760px);
+
+  margin: clamp(5px, 1vh, 12px) auto 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: clamp(5px, .9vh, 10px);
+
+  flex: 0 1 auto;
+  min-height: 0;
 }
 
+/* Menu card */
+
 .menu-item {
-  min-height: 104px;
-  display: grid;
-  grid-template-columns: 120px minmax(0, 1fr) 30px;
+  position: relative;
+
+  display: flex;
   align-items: center;
-  gap: 14px;
-  padding: 10px 18px;
-  border: 2px solid var(--border);
-  border-radius: 20px;
-  background: rgba(255, 250, 244, .72);
-  box-shadow: 0 5px 13px rgba(77, 47, 26, .06);
-  transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
-  -webkit-tap-highlight-color: transparent;
+
+  width: 100%;
+
+  height: clamp(55px, 8.5vh, 86px);
+
+  padding:
+    clamp(4px, 1vw, 10px)
+    clamp(10px, 2.5vw, 22px);
+
+  border: 2px solid #e5c9a7;
+  border-radius: clamp(14px, 3vw, 25px);
+
+  background: rgba(255, 250, 244, .48);
+
+  text-decoration: none;
+  color: #3b2418;
+
+  box-shadow:
+    0 2px 0 rgba(255,255,255,.7),
+    0 4px 10px rgba(80,50,20,.05);
+
+  transition:
+    transform .2s ease,
+    background .2s ease,
+    box-shadow .2s ease;
+
+  overflow: hidden;
 }
 
 .menu-item:hover {
   transform: translateY(-2px);
-  background: #fffdf9;
-  box-shadow: 0 9px 20px rgba(77, 47, 26, .10);
+
+  background: rgba(255,255,255,.72);
+
+  box-shadow:
+    0 5px 15px rgba(80,50,20,.12);
 }
 
 .menu-item:active {
-  transform: scale(.99);
+  transform: scale(.985);
 }
 
-.menu-item img {
-  width: 105px;
-  height: 80px;
+/* Menu image */
+
+.menu-item > img {
+  flex: 0 0 auto;
+
+  width: clamp(48px, 13vw, 88px);
+  height: clamp(48px, 13vw, 88px);
+
   object-fit: contain;
-  border-radius: 12px;
-  mix-blend-mode: multiply;
+
+  margin-right: clamp(8px, 2vw, 20px);
+}
+
+/* Menu text */
+
+.menu-text {
+  min-width: 0;
+  flex: 1;
 }
 
 .menu-text h2 {
-  margin: 0;
   font-family: "Baloo 2", cursive;
-  font-size: clamp(25px, 3vw, 31px);
-  line-height: 1.05;
+
+  font-size: clamp(17px, 4.6vw, 31px);
+  line-height: 1;
+
   font-weight: 700;
+
+  white-space: nowrap;
 }
 
 .menu-text p {
-  margin: 4px 0 0;
-  font-size: clamp(13px, 1.7vw, 17px);
-  line-height: 1.25;
+  margin-top: 3px;
+
+  font-size: clamp(10px, 2.7vw, 17px);
+  line-height: 1.15;
+
+  white-space: nowrap;
 }
+
+/* Arrow */
 
 .arrow {
+  flex: 0 0 auto;
+
   font-family: Arial, sans-serif;
-  font-size: 48px;
-  line-height: 1;
+  font-size: clamp(28px, 7vw, 48px);
   font-weight: 300;
-  text-align: center;
+
+  line-height: 1;
+
+  margin-left: 5px;
 }
 
-/* SOCIAL */
+/* WhatsApp row */
+
+.menu-item.whatsapp {
+  border-color: #dfc4a4;
+}
+
+/* =========================================
+   SOCIAL AREA
+========================================= */
 
 .social-area {
+  flex: 0 0 auto;
+
   text-align: center;
-  padding: 25px 12px 6px;
+
+  padding-top: clamp(4px, .8vh, 10px);
 }
 
 .social-icons {
   display: flex;
   justify-content: center;
-  gap: 22px;
+  align-items: center;
+
+  gap: clamp(20px, 6vw, 45px);
 }
 
 .social-icons a {
-  width: 52px;
-  height: 52px;
-  display: inline-flex;
+  width: clamp(38px, 10vw, 58px);
+  height: clamp(38px, 10vw, 58px);
+
+  display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid #a98559;
+
+  border: 2px solid #b9965e;
   border-radius: 50%;
-  color: #694c35;
-  font-size: 29px;
+
+  color: #3b2418;
   background: rgba(255,255,255,.25);
+
+  text-decoration: none;
+
+  font-size: clamp(20px, 5vw, 31px);
+
+  transition: transform .2s ease;
 }
 
-.social-area p {
-  margin: 11px 0 3px;
-  font-size: 14px;
+.social-icons a:hover {
+  transform: scale(1.08);
+}
+
+.social-area > p {
+  margin-top: clamp(3px, .5vh, 7px);
+
+  font-size: clamp(9px, 2.7vw, 16px);
+  line-height: 1.1;
 }
 
 .tiny-divider {
   display: flex;
   justify-content: center;
-  gap: 8px;
   align-items: center;
-  color: #80634b;
+
+  gap: 8px;
+
+  margin-top: 2px;
+
+  font-size: 12px;
 }
 
 .tiny-divider b {
-  color: #ef7b86;
+  color: #f17882;
 }
 
-/* BOTTOM IMAGE */
+/* =========================================
+   BOTTOM SCENE
+========================================= */
 
 .bottom-scene {
+  flex: 1 1 auto;
+
+  min-height: 0;
+
   width: 100%;
-  margin-top: 4px;
-  line-height: 0;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
   overflow: hidden;
+
+  margin-top: 2px;
 }
 
 .bottom-scene img {
   display: block;
+
   width: 100%;
-  height: auto;
-  max-height: 430px;
+  height: 100%;
+
   object-fit: cover;
-  object-position: center top;
+  object-position: center bottom;
 }
+
+/* =========================================
+   FOOTER
+========================================= */
 
 footer {
-  text-align: center;
-  padding: 10px 10px 28px;
-  font-size: 11px;
-  color: #806d5e;
+  display: none;
 }
 
-/* FLOATING WHATSAPP */
+/* =========================================
+   FLOATING WHATSAPP
+========================================= */
 
 .floating-whatsapp {
   position: fixed;
-  right: max(18px, calc((100vw - 980px) / 2 + 18px));
-  bottom: 18px;
-  z-index: 30;
-  width: 58px;
-  height: 58px;
+
+  right: clamp(10px, 3vw, 25px);
+  bottom: clamp(10px, 2vh, 20px);
+
+  width: clamp(48px, 13vw, 65px);
+  height: clamp(48px, 13vw, 65px);
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   border-radius: 50%;
+
   background: #25d366;
   color: white;
-  font-size: 30px;
-  box-shadow: 0 7px 20px rgba(0,0,0,.22);
+
+  text-decoration: none;
+
+  font-size: clamp(25px, 7vw, 38px);
+
+  box-shadow:
+    0 5px 15px rgba(0,0,0,.18);
+
+  z-index: 20;
+
+  transition: transform .2s ease;
 }
 
-/* MOBILE FIRST */
+.floating-whatsapp:hover {
+  transform: scale(1.08);
+}
 
-@media (max-width: 600px) {
-  body {
-    background: var(--cream);
-  }
+/* =========================================
+   SHORT PHONES
+========================================= */
 
-  .front-page {
-    width: 100%;
-    box-shadow: none;
-  }
+@media (max-height: 700px) {
 
   .hero {
-    padding: 15px 12px 5px;
+    padding-top: 3px;
   }
 
   .logo {
-    width: 205px;
-  }
-
-  .leaf-left {
-    left: -12px;
-    top: 2px;
-    font-size: 46px;
-  }
-
-  .wood-top {
-    right: 0;
-    top: 10px;
-    font-size: 42px;
-  }
-
-  .brand-wrap {
-    gap: 0;
+    width: clamp(90px, 23vw, 145px);
   }
 
   .brand-wrap h1 {
-    font-size: 54px;
-    letter-spacing: -2.5px;
+    font-size: clamp(34px, 9vw, 60px);
   }
 
   .teddy {
-    width: 91px;
-    height: 104px;
-    border-radius: 22px;
+    width: clamp(42px, 11vw, 75px);
   }
 
   .divider {
-    margin-top: 12px;
-    gap: 12px;
-  }
-
-  .divider span {
-    width: 76px;
+    margin-top: 1px;
   }
 
   .subtitle {
-    font-size: 21px;
-    margin-bottom: 17px;
-  }
-
-  .menu {
-    width: calc(100% - 28px);
-    gap: 9px;
-  }
-
-  .menu-item {
-    min-height: 88px;
-    grid-template-columns: 76px minmax(0, 1fr) 22px;
-    gap: 10px;
-    padding: 7px 10px;
-    border-radius: 17px;
-  }
-
-  .menu-item img {
-    width: 68px;
-    height: 66px;
-  }
-
-  .menu-text h2 {
-    font-size: 22px;
-  }
-
-  .menu-text p {
-    font-size: 11.5px;
-    margin-top: 3px;
-  }
-
-  .arrow {
-    font-size: 39px;
-  }
-
-  .social-area {
-    padding-top: 20px;
-  }
-
-  .social-icons {
-    gap: 18px;
-  }
-
-  .social-icons a {
-    width: 46px;
-    height: 46px;
-    font-size: 25px;
-  }
-
-  .social-area p {
     font-size: 12px;
   }
 
-  .bottom-scene img {
-    max-height: none;
-  }
-
-  .floating-whatsapp {
-    width: 54px;
-    height: 54px;
-    right: 14px;
-    bottom: 14px;
-  }
-}
-
-/* SMALL PHONES */
-
-@media (max-width: 380px) {
-  .logo {
-    width: 180px;
-  }
-
-  .brand-wrap h1 {
-    font-size: 47px;
-  }
-
-  .teddy {
-    width: 76px;
-    height: 90px;
-  }
-
   .menu {
-    width: calc(100% - 20px);
+    margin-top: 3px;
+    gap: 3px;
   }
 
   .menu-item {
-    grid-template-columns: 65px minmax(0, 1fr) 18px;
-    padding: 6px 8px;
+    height: clamp(48px, 7.5vh, 60px);
   }
 
-  .menu-item img {
-    width: 59px;
-    height: 58px;
+  .menu-item > img {
+    width: 45px;
+    height: 45px;
   }
 
   .menu-text h2 {
-    font-size: 19px;
+    font-size: 16px;
   }
 
   .menu-text p {
-    font-size: 10px;
+    font-size: 9px;
+  }
+
+  .arrow {
+    font-size: 28px;
+  }
+
+  .social-icons a {
+    width: 34px;
+    height: 34px;
+    font-size: 18px;
+  }
+
+  .social-area > p {
+    font-size: 8px;
   }
 }
 
-/* LARGE DESKTOP */
+/* =========================================
+   VERY SHORT PHONES
+========================================= */
 
-@media (min-width: 1000px) {
-  .front-page {
-    min-height: 100vh;
+@media (max-height: 600px) {
+
+  .logo {
+    width: 75px;
   }
 
-  .hero {
-    padding-top: 34px;
+  .brand-wrap h1 {
+    font-size: 30px;
   }
 
-  .menu {
-    gap: 12px;
+  .teddy {
+    width: 38px;
+  }
+
+  .subtitle {
+    font-size: 10px;
   }
 
   .menu-item {
-    min-height: 112px;
+    height: 43px;
+    border-radius: 12px;
   }
 
-  .bottom-scene img {
-    max-height: 460px;
-    object-fit: cover;
+  .menu-item > img {
+    width: 37px;
+    height: 37px;
+  }
+
+  .menu-text h2 {
+    font-size: 14px;
+  }
+
+  .menu-text p {
+    display: none;
+  }
+
+  .arrow {
+    font-size: 23px;
+  }
+
+  .social-icons a {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+
+  .social-area > p {
+    display: none;
+  }
+
+  .tiny-divider {
+    display: none;
+  }
+}
+
+/* =========================================
+   DESKTOP
+========================================= */
+
+@media (min-width: 768px) {
+
+  body {
+    overflow: auto;
+  }
+
+  .front-page {
+    min-height: 100vh;
+
+    padding:
+      20px
+      20px
+      0;
+  }
+
+  .hero {
+    padding-top: 5px;
+  }
+
+  .logo {
+    width: 190px;
+  }
+
+  .brand-wrap h1 {
+    font-size: 76px;
+  }
+
+  .teddy {
+    width: 100px;
+  }
+
+  .menu {
+    width: 680px;
+    gap: 8px;
+  }
+
+  .menu-item {
+    height: 76px;
+  }
+
+  .menu-item > img {
+    width: 72px;
+    height: 72px;
+  }
+
+  .menu-text h2 {
+    font-size: 27px;
+  }
+
+  .menu-text p {
+    font-size: 14px;
+  }
+
+  .bottom-scene {
+    max-height: 230px;
+  }
+}
+
+/* =========================================
+   LARGE DESKTOP
+========================================= */
+
+@media (min-width: 1200px) {
+
+  .front-page {
+    max-width: 1000px;
+  }
+
+  .logo {
+    width: 210px;
+  }
+
+  .brand-wrap h1 {
+    font-size: 84px;
+  }
+
+  .menu {
+    width: 720px;
+  }
+
+  .bottom-scene {
+    max-height: 250px;
   }
 }
