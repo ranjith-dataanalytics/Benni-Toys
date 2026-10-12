@@ -713,3 +713,346 @@ footer {
     max-height: 250px;
   }
 }
+/* =========================================
+   DESKTOP - SQUARE BLOCK MENU
+========================================= */
+
+@media (min-width: 768px) {
+
+  body {
+    overflow: auto;
+  }
+
+  .front-page {
+    width: 100%;
+    max-width: 1100px;
+    min-height: 100vh;
+    height: auto;
+
+    padding: 18px 20px 0;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+  }
+
+
+  /* -----------------------------
+     DESKTOP HERO
+  ----------------------------- */
+
+  .hero {
+    padding-top: 5px;
+  }
+
+  .logo {
+    width: 165px;
+  }
+
+  .brand-wrap {
+    margin-top: 3px;
+  }
+
+  .brand-wrap h1 {
+    font-size: 72px;
+  }
+
+  .teddy {
+    width: 90px;
+  }
+
+  .divider {
+    width: 480px;
+    margin-top: 6px;
+  }
+
+  .subtitle {
+    font-size: 21px;
+    margin-top: 4px;
+  }
+
+
+  /* -----------------------------
+     SQUARE MENU GRID
+  ----------------------------- */
+
+  .menu {
+    width: 820px;
+    max-width: 90%;
+
+    margin: 16px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+      repeat(3, 1fr);
+
+    gap: 14px;
+
+    flex: none;
+  }
+
+
+  /* -----------------------------
+     SQUARE MENU CARDS
+  ----------------------------- */
+
+  .menu-item {
+    width: 100%;
+
+    height: 170px;
+
+    padding: 15px;
+
+    border-radius: 22px;
+
+    border: 2px solid #e3c6a1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background:
+      rgba(255,250,244,.55);
+
+    box-shadow:
+      0 3px 10px rgba(80,50,20,.07);
+
+    overflow: hidden;
+  }
+
+
+  /* -----------------------------
+     CARD IMAGE
+  ----------------------------- */
+
+  .menu-item > img {
+    width: 78px;
+    height: 78px;
+
+    margin: 0 0 6px 0;
+
+    object-fit: contain;
+
+    flex: none;
+  }
+
+
+  /* -----------------------------
+     CARD TEXT
+  ----------------------------- */
+
+  .menu-text {
+    width: 100%;
+
+    flex: none;
+  }
+
+  .menu-text h2 {
+    font-family: "Baloo 2", cursive;
+
+    font-size: 24px;
+
+    line-height: 1.05;
+
+    white-space: normal;
+
+    font-weight: 700;
+  }
+
+  .menu-text p {
+    margin-top: 4px;
+
+    font-size: 12px;
+
+    line-height: 1.2;
+
+    white-space: normal;
+  }
+
+
+  /* -----------------------------
+     ARROW
+  ----------------------------- */
+
+  .arrow {
+    position: absolute;
+
+    right: 12px;
+    top: 10px;
+
+    font-size: 27px;
+
+    line-height: 1;
+  }
+
+
+  /* -----------------------------
+     WHATSAPP CARD
+  ----------------------------- */
+
+  .menu-item.whatsapp {
+    border-color: #e3c6a1;
+  }
+
+
+  /* -----------------------------
+     SOCIAL
+  ----------------------------- */
+
+  .social-area {
+    padding-top: 12px;
+  }
+
+  .social-icons {
+    gap: 35px;
+  }
+
+  .social-icons a {
+    width: 50px;
+    height: 50px;
+
+    font-size: 24px;
+  }
+
+  .social-area > p {
+    margin-top: 5px;
+
+    font-size: 13px;
+  }
+
+
+  /* -----------------------------
+     BOTTOM IMAGE
+  ----------------------------- */
+
+  .bottom-scene {
+    width: 100%;
+
+    height: 220px;
+
+    max-height: 220px;
+
+    min-height: 220px;
+
+    margin-top: 8px;
+
+    overflow: hidden;
+  }
+
+  .bottom-scene img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center bottom;
+  }
+
+
+  /* -----------------------------
+     FOOTER
+  ----------------------------- */
+
+  footer {
+    display: none;
+  }
+
+}
+
+
+/* =========================================
+   MEDIUM DESKTOP
+========================================= */
+
+@media (min-width: 768px) and (max-width: 1000px) {
+
+  .menu {
+    width: 700px;
+
+    gap: 10px;
+  }
+
+  .menu-item {
+    height: 155px;
+  }
+
+  .menu-item > img {
+    width: 68px;
+    height: 68px;
+  }
+
+  .menu-text h2 {
+    font-size: 21px;
+  }
+
+  .menu-text p {
+    font-size: 11px;
+  }
+
+  .bottom-scene {
+    height: 190px;
+    min-height: 190px;
+  }
+}
+
+
+/* =========================================
+   LARGE DESKTOP
+========================================= */
+
+@media (min-width: 1200px) {
+
+  .front-page {
+    max-width: 1150px;
+  }
+
+  .logo {
+    width: 180px;
+  }
+
+  .brand-wrap h1 {
+    font-size: 78px;
+  }
+
+  .teddy {
+    width: 96px;
+  }
+
+  .menu {
+    width: 870px;
+
+    grid-template-columns:
+      repeat(3, 1fr);
+
+    gap: 16px;
+  }
+
+  .menu-item {
+    height: 180px;
+  }
+
+  .menu-item > img {
+    width: 82px;
+    height: 82px;
+  }
+
+  .menu-text h2 {
+    font-size: 26px;
+  }
+
+  .menu-text p {
+    font-size: 13px;
+  }
+
+  .bottom-scene {
+    height: 230px;
+    min-height: 230px;
+  }
+}
